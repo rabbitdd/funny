@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Brand } from "./brand";
+import { DocumentManager } from "./document-manager";
 import type { Statistics } from "@/lib/polls";
 
 async function request(url: string, payload?: object) {
@@ -346,6 +347,7 @@ function Dashboard() {
                 </div>
               </div>
             </section>
+            <DocumentManager />
             <div className="metric-grid">
               <Metric
                 label="Unique visitors"

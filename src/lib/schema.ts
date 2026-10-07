@@ -26,5 +26,12 @@ CREATE TABLE IF NOT EXISTS rate_limits (
   expires_at timestamptz NOT NULL
 );
 CREATE INDEX IF NOT EXISTS rate_limits_expiry_idx ON rate_limits(expires_at);
+CREATE TABLE IF NOT EXISTS site_document (
+  id integer PRIMARY KEY CHECK (id = 1),
+  name text NOT NULL,
+  size integer NOT NULL CHECK (size BETWEEN 1 AND 3145728),
+  content text NOT NULL,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
 INSERT INTO polls (question) SELECT 'Should we say yes more often?' WHERE NOT EXISTS (SELECT 1 FROM polls);
 `;

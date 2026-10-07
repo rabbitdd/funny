@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, Check, LockKeyhole, RotateCcw, X } from "lucide-react";
 import Link from "next/link";
 import { Brand } from "./brand";
+import { PdfDownload } from "./pdf-download";
 import type { Poll } from "@/lib/polls";
 
 export function PollScreen() {
@@ -164,7 +165,7 @@ export function PollScreen() {
                 ) : (
                   <>
                     <LockKeyhole size={13} />
-                    Please share this with the Koreans
+                    Please share this with Lolita
                   </>
                 )}
               </div>
@@ -179,10 +180,11 @@ export function PollScreen() {
               </button>
             </div>
           )}
+          <PdfDownload />
         </section>
       </main>
       <footer className="site-footer">
-        <span>Sometimes one dog is enough</span>
+        <span>Sometimes relax is enough</span>
         <div>
           <button onClick={() => setPrivacy(true)}>
             Privacy <ArrowRight size={13} />
